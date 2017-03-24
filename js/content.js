@@ -4,7 +4,17 @@
         console.info('%s:', title);
         var tableData = [];
         for (var k in obj) {
-            tableData.push({key: k, value: obj[k]});
+            if (Array.isArray(obj[k])) {
+                for (var i = 0; i < obj[k].length; i++) {
+                    tableData.push({key: k + '[]', value: obj[k][i]});
+                }
+            } else if (obj[k] instanceof Object) {
+                for (var sub_k in obj[k]) {
+                    tableData.push({key: k + '[' + sub_k + ']', value: obj[k][sub_k]});
+                }
+            } else {
+                tableData.push({key: k, value: obj[k]});
+            }
         }
         console.table(tableData);
     }
