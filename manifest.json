@@ -1,6 +1,6 @@
 {
   "name": "ExLogger",
-  "version": "2.0",
+  "version": "2.1",
   "description": "ExLogger for Chrome extension",
 
   "manifest_version": 2,
@@ -18,7 +18,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["./js/content.js"],
+      "js": ["./js/config.js", "./js/parser.js", "./js/content.js"],
       "run_at": "document_start"
     }
   ],

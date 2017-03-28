@@ -42,7 +42,9 @@
                 if (profilerData.QUERIES)
                 {
                     for (var j = 0; j < profilerData.QUERIES.length; j++) {
-                        console.info('%s(%f microsecond)', profilerData.QUERIES[j].sql, profilerData.QUERIES[j].time);
+                        var sqlParser = new Parser(profilerData.QUERIES[j].sql, profilerData.QUERIES[j].time);
+                        sqlParser.parse();
+                        sqlParser.display();
                     }
                 }
                 console.groupEnd();
