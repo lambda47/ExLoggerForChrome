@@ -181,38 +181,20 @@ Parser.prototype.parse = function() {
                 this.parseFromToken();
                 break;
             }
-            if (this.isSymbol(char)) { // 当前字符是界符或运算符
+            var nextChar = this.getNextChar();
+            if (nextChar && this.isSymbol(char + nextChar)) { // 2个字符的界符或运算符
                 this.parseFromToken();
-                var nextChar = this.getNextChar();
-                if (!nextChar) { // 所有字符已解析完毕
-                    this.readChar();
-                    this.isSymbolToken = true;
-                    this.parseFromToken();
-                    break;
-                } else if (this.isSymbol(char + nextChar)) { // 当前解析的界符或运算符为2个字符
-                    this.readChar();
-                    this.readChar();
-                    this.isSymbolToken = true;
-                    this.parseFromToken();
-                } else { // 当前解析的界符或运算符为1个字符
-                    this.readChar();
-                    this.isSymbolToken = true;
-                    this.parseFromToken();
-                }
-            } else {
-                var nextChar = this.getNextChar();
-                if (!nextChar || this.isSymbol(char + nextChar)) { // 当前解析的界符或运算符为2个字符
-                    this.readChar();
-                    this.parseFromToken();
-                    if (!nextChar) {
-                        this.readChar();
-                        this.readChar();
-                        this.isSymbolToken = true;
-                        this.parseFromToken();
-                    }
-                } else {
-                    this.readChar(); // 界符合运算符以外的字符
-                }
+                this.readChar();
+                this.readChar();
+                this.isSymbolToken = true;
+                this.parseFromToken();
+            } else if (this.isSymbol(char)) { // 1个字符的界符或运算符
+                this.parseFromToken();
+                this.readChar();
+                this.isSymbolToken = true;
+                this.parseFromToken();
+            } else { // 界符和运算符以外的字符
+                this.readChar();
             }
         }
     }
