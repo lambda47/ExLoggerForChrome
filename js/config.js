@@ -30,6 +30,6 @@ var functions = ['AVG', 'COUNT', 'MAX', 'MIN', 'SUM', 'STDEV', 'STDEVP', 'VAR', 
     'UNIX_TIMESTAMP', 'FROM_UNIXTIME', 'UTC_DATE', 'UTC_TIME', 'MONTHNAME', 'DAYNAME', 'DAYOFWEEK', 'WEEKDAY', 'WEEKOFYEAR',
     'DAYOFYEAR', 'DAYOFMONTH', 'QUARTER', 'HOUR', 'MINUTE', 'SECOND', 'EXTRACT', 'TIME_TO_SEC', 'SEC_TO_TIME',
     'TO_DAYS', 'FROM_DAYS', 'ADDDATE', 'DATE_ADD', 'SUBDATE', 'ADDTIME', 'SUBTIME', 'DATE_FORMAT', 'TIME_FORMAT',
-    'GET_FORMAT', 'ISFULL'];
+    'GET_FORMAT', 'IFNULL'];
 
 var symbols = [',', '(', ')', ';', ' ', '+', '-', '*', '/', '%', '=', '>', '<', '>=', '<=', '<>', '!='];
