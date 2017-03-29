@@ -166,13 +166,13 @@ Parser.prototype.checkStateNumber = function(char) {
                 this.decimalPointNum = 0;
                 this.isNumberToken = false;
             }
-        } else if (char <= '0' || char >= '9') {
+        } else if (char < '0' || char > '9') {
             this.decimalPointNum = 0;
             this.isNumberToken = false;
         }
     }
 };
-
+// 词法分析
 Parser.prototype.parse = function() {
     if (this.sqlLen > 0) {
         while (true) {
@@ -217,7 +217,7 @@ Parser.prototype.parse = function() {
         }
     }
 };
-
+// 高亮显示
 Parser.prototype.display = function() {
     var format = '';
     var params = [];
@@ -239,7 +239,7 @@ Parser.prototype.display = function() {
         params.push(this.tokens[i].content);
     }
     format += '%c(%f microsecond)';
-    params.push('color:#000000');
+    params.push('color:#000000;font-weight:bold');
     params.push(this.time);
     params.unshift(format);
     console.log.apply(console, params);
