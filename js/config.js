@@ -19,7 +19,7 @@ var keywords = ['ADD', 'ALL', 'ALTER', 'ANALYZE', 'AND', 'AS', 'ASC', 'ASENSITIV
     'STARTING', 'STRAIGHT_JOIN', 'TABLE', 'TERMINATED', 'THEN', 'TINYBLOB', 'TINYINT', 'TINYTEXT', 'TO', 'TRAILING',
     'TRIGGER', 'TRUE', 'UNDO', 'UNION', 'UNIQUE', 'UNLOCK', 'UNSIGNED', 'UPDATE', 'USAGE', 'USE', 'USING', 'UTC_DATE',
     'UTC_TIME', 'UTC_TIMESTAMP', 'VALUES', 'VARBINARY', 'VARCHAR', 'VARCHARACTER', 'VARYING', 'WHEN', 'WHERE', 'WHILE',
-    'WITH', 'WRITE', 'X509', 'XOR', 'YEAR_MONTH', 'ZEROFILL'];
+    'WITH', 'WRITE', 'X509', 'XOR', 'YEAR_MONTH', 'ZEROFILL', 'ESCAPE', 'END'];
 
 var functions = ['AVG', 'COUNT', 'MAX', 'MIN', 'SUM', 'STDEV', 'STDEVP', 'VAR', 'VARP', 'SIN', 'COS', 'TAN', 'COT',
     'ASIN', 'ACOS', 'ATAN', 'ATAN2', 'DEGREES', 'RADIANS', 'EXP', 'LOG', 'LOG10', 'MOD', 'POW', 'POWER', 'SQRT',
@@ -30,5 +30,6 @@ var functions = ['AVG', 'COUNT', 'MAX', 'MIN', 'SUM', 'STDEV', 'STDEVP', 'VAR', 
     'UNIX_TIMESTAMP', 'FROM_UNIXTIME', 'UTC_DATE', 'UTC_TIME', 'MONTHNAME', 'DAYNAME', 'DAYOFWEEK', 'WEEKDAY', 'WEEKOFYEAR',
     'DAYOFYEAR', 'DAYOFMONTH', 'QUARTER', 'HOUR', 'MINUTE', 'SECOND', 'EXTRACT', 'TIME_TO_SEC', 'SEC_TO_TIME',
     'TO_DAYS', 'FROM_DAYS', 'ADDDATE', 'DATE_ADD', 'SUBDATE', 'ADDTIME', 'SUBTIME', 'DATE_FORMAT', 'TIME_FORMAT',
-    'GET_FORMAT'];
+    'GET_FORMAT', 'ISFULL'];
+
 var symbols = [',', '(', ')', ';', ' ', '+', '-', '*', '/', '%', '=', '>', '<', '>=', '<=', '<>', '!='];
