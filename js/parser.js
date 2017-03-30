@@ -206,7 +206,7 @@ Parser.prototype.display = function() {
     for (var i in this.tokens) {
         format += '%c%s';
         if (this.tokens[i].isNumber()) {
-            params.push('color:#ffbe20');
+            params.push('color:#f57f17');
         }else if (this.tokens[i].isString()) {
             params.push('color:#33b877');
         } else if (this.tokens[i].isKeyword()) {
