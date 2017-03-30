@@ -220,7 +220,7 @@ Parser.prototype.display = function() {
         }
         params.push(this.tokens[i].content);
     }
-    format += '%c(%f microsecond)';
+    format += '%c(%f second)';
     params.push('color:#000000;font-weight:bold');
     params.push(this.time);
     params.unshift(format);
