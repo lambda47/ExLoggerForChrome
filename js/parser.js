@@ -10,6 +10,10 @@ var Tool = {
     // 判断字符是否为字符串分隔符
     isStrDelimiter: function(char) {
         return char === "'" || char === '"';
+    },
+    // 判断字符是否为反斜杠
+    isBackSlash: function(char) {
+        return char === '\\';
     }
 };
 
@@ -67,6 +71,15 @@ Parser.prototype.getChar = function() {
         return false;
     } else {
         return this.sql[this.pos];
+    }
+};
+
+// 获取字符流上一个字符
+Parser.prototype.getPrevChar = function() {
+    if (this.pos - 1 < 0) {
+        return false;
+    } else {
+        return this.sql[this.pos - 1];
     }
 };
 
@@ -145,7 +158,8 @@ Parser.prototype.parseFromToken = function() {
 Parser.prototype.checkStateString = function(char) {
     if (Tool.isStrDelimiter(char)) {
         if (this.stateString) {
-            if (char === this.strDelimiter) {
+            var prevChar = this.getPrevChar();
+            if (char === this.strDelimiter && !(prevChar && Tool.isBackSlash(prevChar))) {
                 this.strDelimiter = '';
                 this.stateString = false;
                 this.isStringToken = true;
